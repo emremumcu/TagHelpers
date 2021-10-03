@@ -1,0 +1,45 @@
+﻿<style>
+    xmp {
+        margin: 0px;
+    }
+</style>
+
+<h1>Tag Helpers</h1>
+
+<div class="row">
+
+    <div class="col my-5">
+
+        <table class="table table-striped">
+
+            <tr>
+                <th>Tag Helper</th>
+                <th>Razor Markup</th>
+                <th>Converted Markup</th>
+                <th>Razor Result</th>
+            </tr>
+
+            <tr>
+                <td>If Tag Helper</td>
+                <td><xmp>@Html.Raw(@"<if is=""true""><i>IS condition is satisfied</i></if>")</xmp></td>
+                <td><xmp><if is="true"><i>IS condition is satisfied</i></if></xmp></td>
+                <td><if is="true"><i>IS condition is satisfied</i></if></td>
+            </tr>
+
+        </table>
+
+        <div condition="true" class="p-3 bg-light">
+            <p>
+                This div is visible since condition is true...
+            </p>
+        </div>
+
+        <partial-c when="true" name="_MyPartial" model="DateTime.Now" />
+
+        <cache expires-sliding="@TimeSpan.FromSeconds(15)">
+            <p>Timestamp from cache tag helper @DateTime.Now.ToString("dd.MM.yyyy HH:mm:ss")</p>
+        </cache>
+
+    </div>
+
+</div>

@@ -1,0 +1,10 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, TagHelpers
+
+@*
+    The code above uses the wildcard syntax to specify all the tag helpers in our assembly will be available. The first string after @addTagHelper specifies the tag helper to load (Use "*" for all tag helpers), and the second string "TagHelpers" specifies the assembly the tag helper is in.
+
+    It's the @addTagHelper directive that makes the tag helper available to the Razor view. Alternatively, you can provide the fully qualified name (FQN) of a tag helper as shown below:
+
+    @addTagHelper TagHelpers.TagHelpers.EmailTagHelper, TagHelpers
+*@
